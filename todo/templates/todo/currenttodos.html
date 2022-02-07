@@ -1,0 +1,10 @@
+{% extends "todo/base_temp.html" %}
+{% block content %}
+<h2>TODOS</h2>
+<form method="POST">
+    {% csrf_token %}
+{{ form.as_p }}
+{{ message }}
+<a role="button" class="btn btn-primary" href="{% url 'create_todo' %}">New Todo</a>
+    </form>
+{% endblock %}
